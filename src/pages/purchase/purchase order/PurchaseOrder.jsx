@@ -64,26 +64,30 @@ const PurchaseOrder = () => {
   }, [data]);
 
   return (
-    <Table
-      title="Purchase Management"
-      subtitle="Purchase Order"
-      pagetitle="Purchase Order"
-      endpoint={rows}
-      totalPages={data?.totalPages || 0}
-      columns={Columns}
-      routepoint={"viewpurchaseorder"}
-      FilterModal={Filters}
-      loading={isLoading}
-      isRefreshing={isFetching}
-      currentPage={currentPage}
-      setCurrentPage={setCurrentPage}
-      search={searchTerm}
-      setSearch={setSearchTerm}
-      filterParams={filterParams}
-      setFilterParams={setFilterParams}
-      onSuccess={refetch}
-      onUpdated={refetch}
-    />
+    <div className="flex flex-col h-full">
+      <div className="flex-1 min-h-0">
+        <Table
+          title="Purchase Management"
+          subtitle="Purchase Order"
+          pagetitle="Purchase Order"
+          endpoint={rows}
+          totalPages={data?.totalPages || 0}
+          columns={Columns}
+          routepoint={"viewpurchaseorder"}
+          FilterModal={Filters}
+          loading={isLoading}
+          isRefreshing={isFetching}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          search={searchTerm}
+          setSearch={setSearchTerm}
+          filterParams={filterParams}
+          setFilterParams={setFilterParams}
+          onSuccess={refetch}
+          onUpdated={refetch}
+        />
+      </div>
+    </div>
   );
 };
 
